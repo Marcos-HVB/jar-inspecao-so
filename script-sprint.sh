@@ -16,8 +16,8 @@ if [ $? = 0 ]; #se retorno for igual a 0
 			git fetch && git pull
 			cd project-easy/target
 		else
-			git clone https://github.com/PauloCezaretto/Easy---JAR.git
-			cd Easy---JAR/project-easy/target
+			git clone https://github.com/Marcos-HVB/jar-inspecao-so.git
+			cd jar-inspecao-so/project-easy/target
 		fi
 
 		java -jar project-easy-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -39,8 +39,8 @@ if [ $? = 0 ]; #se retorno for igual a 0
 			git fetch && git pull
 			cd Easy---JAR/project-easy/target
 		else
-			git clone https://github.com/PauloCezaretto/Easy---JAR.git
-			cd Easy---JAR/project-easy/target
+			git clone https://github.com/Marcos-HVB/jar-inspecao-so.git
+			cd jar-inspecao-so/project-easy/target
 		fi
 
 		java -jar project-easy-1.0-SNAPSHOT-jar-with-dependencies.jar
