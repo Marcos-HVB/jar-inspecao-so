@@ -10,7 +10,7 @@ if [ $? = 0 ]; #se retorno for igual a 0
 	then #entao,
 		echo "java instalado" #print no terminal
 
-		cd Easy---JAR
+		cd jar-inspecao-so
 		if [ $? = 0 ]
 		then
 			git fetch && git pull
@@ -33,11 +33,11 @@ if [ $? = 0 ]; #se retorno for igual a 0
 	then #entao
 	sudo apt install openjdk-17-jre -y #executa instalacao do java
 
-	cd Easy---JAR
+	cd jar-inspecao-so
 		if [ $? = 0 ]
 		then
 			git fetch && git pull
-			cd Easy---JAR/project-easy/target
+			cd jar-inspecao-so/project-easy/target
 		else
 			git clone https://github.com/Marcos-HVB/jar-inspecao-so.git
 			cd jar-inspecao-so/project-easy/target
@@ -48,5 +48,4 @@ if [ $? = 0 ]; #se retorno for igual a 0
 	fi #fecha o 2o if
 
 fi #fecha o 1o if
-
 
