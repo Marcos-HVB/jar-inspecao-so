@@ -10,7 +10,7 @@ public class Conexao2 {
     public Conexao2() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://3.88.210.180:3306/banco1?useSSL=false")
+        dataSource.setUrl("jdbc:mysql://localhost:3306/banco1?autoReconnect=true&useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("urubu100");
         this.connection = new JdbcTemplate(dataSource);
