@@ -148,12 +148,14 @@ public class ProjectEasy extends javax.swing.JFrame {
         String email = String.valueOf(input_user.getText()).trim();
         String password = String.valueOf(input_password.getText()).trim();
         
-        List<User> usuariosSql = con.query("SELECT * FROM usuario WHERE email = ? AND senha = ?", new UserRowMapper(), email, password);
+        String query = String.format("SELECT * FROM Usuario WHERE email = '%s' AND senha = '%s'",email, password);
         
-        List<User> usuariosMySql = con2.query("SELECT * FROM Usuario WHERE email = ? AND senha = ?", new UserRowMapper(), email, password);
-        
+        List<User> usuariosSql = con.query(query, new UserRowMapper());
         System.out.println(usuariosSql);
+        
+        List<User> usuariosMySql = con2.query(query, new UserRowMapper());
         System.out.println(usuariosMySql);
+
         
         if (usuariosSql.size() <= 0 && usuariosMySql.size() <= 0){
             System.out.println("Acesso negado - Dados incorretos");
