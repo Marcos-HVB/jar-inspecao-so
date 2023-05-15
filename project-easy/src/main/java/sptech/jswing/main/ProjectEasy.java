@@ -25,7 +25,7 @@ public class ProjectEasy extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -140,9 +140,9 @@ public class ProjectEasy extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_loginActionPerformed
+    private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {                                             
         
         jLabel3.setText("");
         String email = String.valueOf(input_user.getText()).trim();
@@ -164,19 +164,19 @@ public class ProjectEasy extends javax.swing.JFrame {
         } else {
             new LoginOk().setVisible(true);
         }
-    }//GEN-LAST:event_button_loginActionPerformed
+    }                                            
 
-    private void input_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_userActionPerformed
+    private void input_userActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_userActionPerformed
+    }                                          
 
-    private void input_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_passwordActionPerformed
+    private void input_passwordActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
-    }//GEN-LAST:event_input_passwordActionPerformed
+    }                                              
 
-    private void button_loginPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_button_loginPropertyChange
+    private void button_loginPropertyChange(java.beans.PropertyChangeEvent evt) {                                            
         // TODO add your handling code here:
-    }//GEN-LAST:event_button_loginPropertyChange
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -221,7 +221,7 @@ public class ProjectEasy extends javax.swing.JFrame {
 
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JLabel LabelResultado;
     private javax.swing.JButton button_login;
     private javax.swing.JTextField input_password;
@@ -231,5 +231,5 @@ public class ProjectEasy extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
