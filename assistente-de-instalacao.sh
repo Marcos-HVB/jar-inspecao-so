@@ -116,12 +116,14 @@ if [ $? -eq 0 ]
 			sudo docker run -d -p 3306:3306 --name BancoLocalEasy -e "MYSQL_DATABASE=bd-projeto-easy" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:8.0
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec -it ContainerBD bash
+			sudo docker exec ContainerBD bash
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando banco MySQL."
 			mysql -u root -p
 			use bd-projeto-easy;
-			CREATE TABLE log_uso (
+			clear
+			sleep 2
+			CREATE TABLE if not exists log_uso (
 				id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 				id_maquina INT NOT NULL,
 				id_empresa INT NOT NULL,
@@ -132,7 +134,7 @@ if [ $? -eq 0 ]
 			);
 
 
-			CREATE TABLE registro (
+			CREATE TABLE if not exists registro (
 				id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 				clock_cpu DECIMAL(5 , 2 ) NULL,
 				temp_cpu DECIMAL(5 , 2 ) NULL,
@@ -143,7 +145,7 @@ if [ $? -eq 0 ]
 				data_hora DATETIME
 			);
 
-			CREATE TABLE rede(
+			CREATE TABLE if not exists rede(
 				id INT PRIMARY KEY auto_increment NOT NULL,
 				ip varchar(20),
 				driver varchar(45),
@@ -152,7 +154,7 @@ if [ $? -eq 0 ]
 
 			clear
 			exit
-			clear
+			sleep 2
 			exit
 			sleep 2
 			sudo apt update -y
