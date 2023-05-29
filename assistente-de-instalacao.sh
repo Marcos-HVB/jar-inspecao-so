@@ -55,7 +55,7 @@ if [ $? -eq 0 ]
 			sleep 2
 			sudo apt update && sudo apt upgrade –y
 			clear
-			sudo apt install docker.io
+			sudo apt install docker.io -y
 			clear
 			sudo systemctl start docker
 			clear
@@ -113,14 +113,20 @@ if [ $? -eq 0 ]
 		then
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu criar um banco ;D"
 			sleep 2
-			sudo apt install docker-compose
+			sudo apt install docker-compose -y
 			sleep 2
 			sudo docker-compose up -d
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
 			sudo docker exec BancoLocalEasy mysql -uroot -purubu100 -S /var/run/mysqld/mysqld.sock <<EOF
+			
+			show databases;
+
 			use bd-projeto-easy;
  
+			show tables;
+
+
 			CREATE TABLE if not exists log_uso (
 				id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 				id_maquina INT NOT NULL,
@@ -151,7 +157,7 @@ if [ $? -eq 0 ]
 			);
 			
 EOF
-			clear
+			
 		else 	
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Você optou por não ciar o banco por enquanto, até a próxima então!"
 	fi
