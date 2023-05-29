@@ -107,7 +107,7 @@ if [ $? -eq 0 ]
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
 
-			sudo docker exec BancoLocalEasy mysql -u$usuario -p -S /var/run/mysqld/mysqld.sock 
+			sudo docker exec BancoLocalEasy mysql -u root -p -S /var/run/mysqld/mysqld.sock 
 			
 			<<EOF
 			
