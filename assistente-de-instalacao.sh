@@ -113,16 +113,12 @@ if [ $? -eq 0 ]
 		then
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu criar um banco;D"
 			sleep 2
-			sudo docker run -d -p 3306:3306 --name BancoLocalEasy -e "MYSQL_DATABASE=bd-projeto-easy" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:8.0
+			sudo docker-compose up -d
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
 			sudo docker exec BancoLocalEasy mysql -uroot -purubu100 -S /var/run/mysqld/mysqld.sock << EOF
-			clear
-			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando banco MySQL."
-			sleep 2
 			use bd-projeto-easy;
-			clear
-			sleep 2
+ 
 			CREATE TABLE if not exists log_uso (
 				id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 				id_maquina INT NOT NULL,
