@@ -116,7 +116,7 @@ if [ $? -eq 0 ]
 			sudo docker-compose up -d
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec BancoLocalEasy mysql -uroot -purubu100 -S /var/run/mysqld/mysqld.sock << EOF
+			sudo docker exec BancoLocalEasy mysql -uroot -purubu100 -S /var/run/mysqld/mysqld.sock <<EOF
 			use bd-projeto-easy;
  
 			CREATE TABLE if not exists log_uso (
@@ -148,7 +148,7 @@ if [ $? -eq 0 ]
 				nome varchar(45),
 			);
 			
-			EOF
+EOF
 			clear
 			exit
 			sleep 2
