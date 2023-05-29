@@ -106,7 +106,7 @@ if [ $? -eq 0 ]
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) : Você já tem o Banco criado!!!"
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec BancoLocalEasy mysql --defaults-file=auth-mysql.cnf -S /var/run/mysqld/mysqld.sock <<EOF
+			sudo docker exec BancoLocalEasy mysql --defaults-file=/auth-mysql.cnf -S /var/run/mysqld/mysqld.sock <<EOF
 			
 			show databases;
 
