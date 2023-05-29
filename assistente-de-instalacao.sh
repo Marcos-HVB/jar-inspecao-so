@@ -106,7 +106,7 @@ if [ $? -eq 0 ]
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) : Você já tem o Banco criado!!!"
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec -it BancoLocalEasy bash - c "mysql -u root -p
+			sudo docker exec -it BancoLocalEasy bash -c "mysql -u root -p
 			echo 'urubu100'"
 			<<EOF
 			
