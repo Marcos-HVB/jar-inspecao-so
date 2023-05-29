@@ -158,8 +158,7 @@ EOF"
 			sudo docker-compose up -d
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec BancoLocalEasy mysql --defaults-file=mysql.cnf -S /var/run/mysqld/mysqld.sock <<EOF
-			
+			sudo docker exec -it BancoLocalEasy bash -c "mysql -u root -purubu100 <<EOF
 			show databases;
 
 			use bd-projeto-easy;
@@ -193,10 +192,10 @@ EOF"
 				id INT PRIMARY KEY auto_increment NOT NULL,
 				ip varchar(20),
 				driver varchar(45),
-				nome varchar(45),
+				nome varchar(45)
 			);
 			
-EOF
+EOF"
 			
 		else 	
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Você optou por não ciar o banco por enquanto, até a próxima então!"
