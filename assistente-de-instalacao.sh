@@ -106,10 +106,7 @@ if [ $? -eq 0 ]
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) : Você já tem o Banco criado!!!"
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec -it BancoLocalEasy bash -c "mysql -u root -purubu100"
-
-			<<EOF
-			
+			sudo docker exec -it BancoLocalEasy bash -c "mysql -u root -purubu100 <<EOF
 			show databases;
 
 			use bd-projeto-easy;
@@ -146,7 +143,7 @@ if [ $? -eq 0 ]
 				nome varchar(45),
 			);
 			
-EOF
+EOF"
 		
 	else
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhum banco, mas sem problemas, irei resolver isso agora!"
