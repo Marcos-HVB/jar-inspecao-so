@@ -104,6 +104,47 @@ sudo docker-compose --version
 if [ $? -eq 0 ]
 	then
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) : Você já tem o Banco criado!!!"
+			clear
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
+			sudo docker exec BancoLocalEasy mysql -uroot -purubu100 -S /var/run/mysqld/mysqld.sock <<EOF
+			
+			show databases;
+
+			use bd-projeto-easy;
+ 
+			show tables;
+
+
+			CREATE TABLE if not exists log_uso (
+				id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+				id_maquina INT NOT NULL,
+				id_empresa INT NOT NULL,
+				id_usuario INT NOT NULL,
+				data_log DATE NULL,
+				hora_inicio TIME NULL,
+				hora_fim TIME NULL
+			);
+
+
+			CREATE TABLE if not exists registro (
+				id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+				clock_cpu DECIMAL(5 , 2 ) NULL,
+				temp_cpu DECIMAL(5 , 2 ) NULL,
+				uso_cpu DECIMAL(5 , 2 ) NULL,
+				download_rede BIGINT NULL,
+				upload_rede BIGINT NULL,
+				uso DECIMAL(7,2),
+				data_hora DATETIME
+			);
+
+			CREATE TABLE if not exists rede(
+				id INT PRIMARY KEY auto_increment NOT NULL,
+				ip varchar(20),
+				driver varchar(45),
+				nome varchar(45),
+			);
+			
+EOF
 		
 	else
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Opa! Não identifiquei nenhum banco, mas sem problemas, irei resolver isso agora!"
