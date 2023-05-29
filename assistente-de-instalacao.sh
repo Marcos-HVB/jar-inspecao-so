@@ -100,7 +100,7 @@ if [ $? -eq 0 ]
 fi
 
 
-sudo docker ps -a
+sudo docker-compose --version
 if [ $? -eq 0 ]
 	then
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7) : Você já tem o Banco criado!!!"
@@ -111,7 +111,9 @@ if [ $? -eq 0 ]
 	read inst
 	if [ \"$inst\" == \"S\" ]
 		then
-			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu criar um banco;D"
+			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Ok! Você escolheu criar um banco ;D"
+			sleep 2
+			sudo apt install docker-compose
 			sleep 2
 			sudo docker-compose up -d
 			clear
@@ -149,12 +151,6 @@ if [ $? -eq 0 ]
 			);
 			
 EOF
-			clear
-			exit
-			sleep 2
-			exit
-			sleep 2
-			sudo apt update -y
 			clear
 		else 	
 		echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Você optou por não ciar o banco por enquanto, até a próxima então!"
