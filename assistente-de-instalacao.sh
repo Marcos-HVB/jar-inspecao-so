@@ -116,10 +116,10 @@ if [ $? -eq 0 ]
 			sudo docker run -d -p 3306:3306 --name BancoLocalEasy -e "MYSQL_DATABASE=bd-projeto-easy" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:8.0
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando container MySQL."
-			sudo docker exec ContainerBD bash
+			sudo docker exec BancoLocalEasy mysql -uroot -purubu100 -S /var/run/mysqld/mysqld.sock << EOF
 			clear
 			echo "$(tput setaf 10)[Bot assistant]:$(tput setaf 7)  Acessando banco MySQL."
-			mysql -u root -p
+			sleep 2
 			use bd-projeto-easy;
 			clear
 			sleep 2
@@ -151,7 +151,8 @@ if [ $? -eq 0 ]
 				driver varchar(45),
 				nome varchar(45),
 			);
-
+			
+			EOF
 			clear
 			exit
 			sleep 2
