@@ -140,7 +140,7 @@ if [ $? -eq 0 ]
 				id INT PRIMARY KEY auto_increment NOT NULL,
 				ip varchar(20),
 				driver varchar(45),
-				nome varchar(45),
+				nome varchar(45)
 			);
 			
 EOF"
